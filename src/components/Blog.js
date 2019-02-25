@@ -16,8 +16,8 @@ const Blog = ({ blog }) => {
 
     return (
 
-        <div>
-            <div style={blogStyle}>
+        <div style={blogStyle}>
+            <div>
                 <div style={hide}>
                     <div onClick={() => setContentVisible(true)} style={{ cursor: 'pointer' }}>
                         <p>
@@ -26,16 +26,14 @@ const Blog = ({ blog }) => {
                     </div>
                 </div>
             </div>
-            <div style={blogStyle}>
-                <div style={show}>
-                    <div onClick={() => setContentVisible(false)} style={{ cursor: 'pointer' }}>
-                        <p>{blog.title} {blog.author}</p>
-                    </div>
-                    <div>
-                        <a href={'/'}>{blog.url}</a>
-                        <p>{`${blog.likes} likes`} <button>like</button></p>
-                        <p>{`added by ${blog.user.name}`}</p>
-                    </div>
+            <div style={show}>
+                <div onClick={() => setContentVisible(false)} style={{ cursor: 'pointer' }}>
+                    <p>{blog.title} {blog.author}</p>
+                </div>
+                <div>
+                    <a href={'/'}>{blog.url}</a>
+                    <p>{`${blog.likes} likes`} <button>like</button></p>
+                    <p>{`added by ${blog.user.name}`}</p>
                 </div>
             </div>
         </div>
