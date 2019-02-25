@@ -20,7 +20,7 @@ const NewBlogForm = (props) => {
         blogService.setToken(user.token)
         try {
             await blogService.create({
-                title:title.value, author:author.value, url:url.value
+                title:title.value, author:author.value, url:url.value, likes:0
             })
             title.onReset()
             author.onReset()
@@ -35,6 +35,7 @@ const NewBlogForm = (props) => {
 
     }
 
+
     const blogForm = () => {
         return (
             <Toggleable buttonLabel='new blog' ref={blogFormRef}>
@@ -47,6 +48,8 @@ const NewBlogForm = (props) => {
             </Toggleable>
         )
     }
+
+
 
     return (
         <div>
